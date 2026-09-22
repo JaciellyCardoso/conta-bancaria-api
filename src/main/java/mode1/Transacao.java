@@ -1,0 +1,43 @@
+package mode1;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+public class Transacao {private TipoTransacao tipo;
+    private BigDecimal valor;
+    private LocalDateTime data;
+    private Conta contaOrigem;
+
+    public TipoTransacao getTipo() {
+        return tipo;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
+    }
+
+    public Conta getContaOrigem() {
+        return contaOrigem;
+    }
+
+    public void setContaOrigem(Conta contaOrigem) {
+        this.contaOrigem = contaOrigem;
+    }
+
+    public void setTipo(TipoTransacao tipo) {
+        this.tipo = tipo;
+
+    }
+}
