@@ -1,11 +1,18 @@
-package mode1;
+package com.pactomais.contabancaria.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
-public class Transacao {private TipoTransacao tipo;
+@Entity
+public class Transacao {@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+    @Enumerated(EnumType.STRING)
+    private TipoTransacao tipo;
     private BigDecimal valor;
     private LocalDateTime data;
+    @ManyToOne
+    @JoinColumn(name ="conta_origem_id")
     private Conta contaOrigem;
 
     public TipoTransacao getTipo() {

@@ -1,9 +1,18 @@
-package mode1;
+package com.pactomais.contabancaria.model;
+
+import javax.persistence.*;
 
 import java.math.BigDecimal;
-
-public class Conta {private String numero;
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_conta")
+public class Conta {@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+    private String numero;
     private BigDecimal saldo;
+    @ManyToOne
+    @JoinColumn(name = "correntista_id")
     private Correntista correntista;
 
     public String getNumero() {

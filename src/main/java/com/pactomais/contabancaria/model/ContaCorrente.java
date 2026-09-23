@@ -1,7 +1,8 @@
-package mode1;
+package com.pactomais.contabancaria.model;
 
+import javax.persistence.Entity;
 import java.math.BigDecimal;
-
+@Entity
 public class ContaCorrente extends Conta {private BigDecimal limite;
 
     public BigDecimal getLimite() {
